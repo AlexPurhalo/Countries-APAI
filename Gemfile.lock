@@ -73,6 +73,7 @@ GEM
     racksh (1.0.0)
       rack (>= 1.0)
       rack-test (>= 0.5)
+    rake (12.2.1)
     rest-client (2.0.1)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
@@ -122,6 +123,7 @@ DEPENDENCIES
   rack-cors (~> 0.4.0)
   rack-test (~> 0.6.3)
   racksh (~> 1.0)
+  rake
   rest-client
   rspec (~> 3.5)
   sequel (~> 4.41)

@@ -4,8 +4,21 @@ class Countries < Grape::API
       @countries = Country.all
     end
 
-    get '/:code/cities', rabl: 'cities' do
-      @cities = Country.where(code: params[:code]).first.cities
+    get '/:code/cities' do
+      @country = Country.where(code: params[:code]).first
+
+      unless @country
+        error_params = {
+            error:   'unexpected error',
+            details: 'country is not found'
+        }
+
+        error!(error_params, 500)
+      end
+
+      @cities = @country.cities
+
+      render rabl: 'cities'
     end
   end
 end

@@ -1,3 +1,3 @@
 object @cities
-attributes :name
+attributes :id, :name
 child(:country) { attributes :id, :name, :code }
